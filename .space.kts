@@ -9,7 +9,7 @@ job("Build and push Docker") {
         dockerBuildPush {
             context = "docker"
             labels["vendor"] = "mycompany"
-            val spaceRepo = "nefdtco.registry.jetbrains.space/p/voortrekkers/docker/voortrekkersWebsite"
+            val spaceRepo = "nefdtco.registry.jetbrains.space/p/voortrekkers/docker/voortrekkers-website"
             // image tags for 'docker push'
             tags {
                 +"$spaceRepo:1.0.${"$"}JB_SPACE_EXECUTION_NUMBER"
