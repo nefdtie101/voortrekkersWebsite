@@ -13,7 +13,6 @@ job("Build and push Docker") {
             // image tags for 'docker push'
             tags {
                 +"$spaceRepo:1.0.${"$"}JB_SPACE_EXECUTION_NUMBER"
-                +"$spaceRepo:latest"
             }
         }
     }
