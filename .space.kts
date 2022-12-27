@@ -33,13 +33,13 @@ job("Deploy App To Server") {
      host("Run echo") {
         shellScript {
             content = """
-               docker pull nefdtco.registry.jetbrains.space/p/voortrekkers/docker/voortrekker_api:latest
-               docker run -d -p 3000:3000 voortrekker_api:latest
+              spawn ssh root@65.109.168.47
+				expect "password:"
+				sleep 1
+				send "Eddie532411?"
+                docker pull nefdtco.registry.jetbrains.space/p/voortrekkers/docker/voortrekkerwebsite:latest
+                docker run -p 3000:3000 voortrekkerwebsite:latest
             """
-        }
-
-        requirements {
-            workerTags("voortrekkers")
         }
     }
  }
