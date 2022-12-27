@@ -30,9 +30,7 @@ job("Deploy App To Server") {
      startOn {
         gitPush { enabled = false }
          }
-    }
-
-    host("Run echo") {
+     host("Run echo") {
         shellScript {
             content = """
                docker pull nefdtco.registry.jetbrains.space/p/voortrekkers/docker/voortrekker_api:latest
@@ -44,4 +42,6 @@ job("Deploy App To Server") {
             workerTags("voortrekkers")
         }
     }
-}
+ }
+
+    
