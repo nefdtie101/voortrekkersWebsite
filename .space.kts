@@ -31,8 +31,11 @@ job("Deploy") {
     host("SSH to Production") {
         shellScript {
             content = """
-                id_rsa =  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDY1rmuanI2R0n5lwLmTnSiRG6zEH9GhkTQmgQTxaeIuCsPnSz7W3sl/RlDkB5npQgtKrdSQnkbt8TLiST>
-                ssh -i id_rsa -o StrictHostKeyChecking=accept-new leeuwenveldstaatmakers.org "ls"
+                spawn ssh root@65.109.168.47
+				expect "password:"
+				sleep 1
+				send "Eddie532411?"
+				ls
             """
         }
     }
