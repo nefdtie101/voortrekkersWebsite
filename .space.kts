@@ -26,22 +26,15 @@ job("Build and push Docker") {
 }
 
 
-job("Deploy App To Server") {
-     startOn {
-        gitPush { enabled = false }
-         }
-     host("Run echo") {
+job("Deploy") {
+    // for optimisation puporse: do not run any container, put script just on "host": https://www.jetbrains.com/help/space/jobs-and-actions.html#main-features-of-jobs-and-steps
+    host("SSH to Production") {
         shellScript {
             content = """
-              spawn ssh root@65.109.168.47
-				expect "password:"
-				sleep 1
-				send "Eddie532411?"
-                docker pull nefdtco.registry.jetbrains.space/p/voortrekkers/docker/voortrekkerwebsite:latest
-                docker run -p 3000:3000 voortrekkerwebsite:latest
+                id_rsa =  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDY1rmuanI2R0n5lwLmTnSiRG6zEH9GhkTQmgQTxaeIuCsPnSz7W3sl/RlDkB5npQgtKrdSQnkbt8TLiST>
+                ssh -i id_rsa -o StrictHostKeyChecking=accept-new leeuwenveldstaatmakers.org "ls"
             """
         }
     }
- }
-
+}
     
