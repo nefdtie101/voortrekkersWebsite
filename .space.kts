@@ -31,7 +31,7 @@ job("Deploy") {
     host("SSH to Production") {
         shellScript {
             content = """
-                spawn ssh root@65.109.168.47
+                ssh root@65.109.168.47
 				expect "password:"
 				sleep 1
 				send "Eddie532411?"
