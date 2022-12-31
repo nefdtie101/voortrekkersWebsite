@@ -25,7 +25,7 @@ export default function NavBar(props){
        router.push(`/groepe`);
        setTimeout(function(){
            router.reload()
-       }, 500);
+       }, 90);
    }
 
    function navigateGebiedAksies(){
