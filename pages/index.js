@@ -5,6 +5,7 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import Aksies from "../Component/aksies";
 
+
 export default function Home() {
   const [aksies , SetAksies] = useState([])
   const [appUrl , SetAppUrl] = useState([])
@@ -22,6 +23,9 @@ export default function Home() {
 
   return (
       <div>
+        <Head>
+          <title>Leeuwenveld Staatmakers</title>
+        </Head>
         <h3 className='middle red'>Spiesiale Aksies</h3>
         {aksies.map((x) => (
             <Aksies url={`${appUrl}/Form/BasicStudentForm?IdEvent=${x.idEvent}&Redirect=${x.redirectUri}`} className='middle' name={x.eventName} description={x.eventDiscription}/>

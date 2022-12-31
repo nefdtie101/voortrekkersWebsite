@@ -124,3 +124,33 @@ a:focus, a:hover{
   color: white;
   text-align: center;
 }
+
+@media  (max-width: 521px) {
+  .logo{
+    height: 50px !important;
+  }
+}
+
+@media  (max-width: 471px) {
+  .rs-navbar-item{
+    height: 50px !important;
+  }
+  .rs-nav-horizontal{
+    padding-left: 60px !important;
+  }
+}
+
+@media  (max-width: 441px) {
+  .rs-navbar-item{
+    height: 50px !important;
+  }
+
+
+  .rs-navbar-nav{
+    float: none !important;
+    height: 40% !important;
+  }
+
+
+
+}

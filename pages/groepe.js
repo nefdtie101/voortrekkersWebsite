@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import axios from "axios";
 import Aksies from "../Component/aksies";
+import Head from "next/head";
 
 
 
@@ -41,6 +42,9 @@ export default function Groepe() {
 
     return (
         <div>
+            <Head>
+                <title>{orgs.name}</title>
+            </Head>
           <div className='left  w-50'>
               <h3 className='middle red'>{orgs.name}</h3>
               <p className='middle'>{orgs.discription }</p>
