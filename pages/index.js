@@ -26,7 +26,7 @@ export default function Home() {
         <Head>
           <title>Leeuwenveld Staatmakers</title>
         </Head>
-        <h3 className='middle red'>Spiesiale Aksies</h3>
+        <h3 className='middle red'>Spesiale Aksies</h3>
         {aksies.map((x) => (
             <Aksies url={`${appUrl}/Form/BasicStudentForm?IdEvent=${x.idEvent}&Redirect=${x.redirectUri}`} className='middle' name={x.eventName} description={x.eventDiscription}/>
         ))}
